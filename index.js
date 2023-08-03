@@ -14,7 +14,7 @@ const settingsRouter=require("./src/routes/settings.routes");
 
 //app
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true })); 
 app.use(cors());
 
 // emailSender({email:'sds@asdd.com',name:'dsdf'})
@@ -36,7 +36,7 @@ app.listen(process.env.PORT || 5000);
 
 // const uri = 'YOUR_MONGODB_ATLAS_CONNECTION_URI';
 // const dbName = 'userDb';
-// const collectionName = 'users';
+// const collectionName = 'users'; 
 
 // async function deleteAllRecords() {
 //   const client = new MongoClient(Uri);
