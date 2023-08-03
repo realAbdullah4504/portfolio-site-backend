@@ -62,8 +62,3 @@ app.listen(process.env.PORT || 5000);
 // }
 
 // // Call the function to delete all records
-// deleteAllRecords();
-
-
-//'https://ghani-soft.vercel.app/settings/GhaniSoftMainLogo.png'
-//
