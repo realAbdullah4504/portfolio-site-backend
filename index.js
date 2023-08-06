@@ -1,5 +1,4 @@
 
-
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
@@ -11,6 +10,7 @@ const app = express();
 //routes
 const usersRouter = require("./src/routes/users.routes");
 const settingsRouter=require("./src/routes/settings.routes");
+const serviceRouter=require('./src/routes/service.routes');
 
 //app
 app.use(express.json());
@@ -20,17 +20,20 @@ app.use(cors());
 // emailSender({email:'sds@asdd.com',name:'dsdf'})
 // process.env.ATLAS_URI;//||'mongodb+srv://Abdullah:Test-123@cluster0.xh7gosd.mongodb.net/Eagle-Elite';
 const Uri = process.env.ATLAS_URI; //"mongodb://localhost:27017/userDb";
-mongoose.connect(Uri, { useNewUrlParser: true });
+mongoose.connect(Uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+   });
 
 
 
 //for the routes users
 app.use("/users", usersRouter);
 app.use("/settings", settingsRouter);
+app.use('/service',serviceRouter);
 
 app.listen(process.env.PORT || 5000);
 
- 
 
 // const { MongoClient } = require('mongodb');
 
