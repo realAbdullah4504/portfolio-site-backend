@@ -3,9 +3,9 @@ const Setting = require("../models/settings.models");
 
 const getSettings = async (req, res) => {
   try {
-    const data = await Setting.findOne({ _id: "64ce488d470947cb026acac1" });
-    //console.log(data)
-    res.json({ settings: data });
+    const data = await Setting.find({});
+    console.log(data)
+    res.json({ settings: data[0] });
   } catch {
     res.status(400).json("error getting data");
   }

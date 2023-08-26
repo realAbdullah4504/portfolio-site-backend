@@ -17,7 +17,7 @@ subscribeUser = async (req, res) => {
       user:user,
       emailStatus:status});
   } catch (err) {
-    res.status(400).json("error posting data");
+    res.status(400).json("error" + err);
   }
 };
 
